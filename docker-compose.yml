@@ -1,0 +1,26 @@
+version: "3.6"
+
+services:
+  so1:
+    image: ${SPLUNK_IMAGE:-splunk/splunk:latest}
+    container_name: so1
+    environment:
+      # - SPLUNK_HTTP_ENABLESSL=true
+      # - SPLUNK_HTTP_ENABLESSL_CERT=/media/cert.pem
+      # - SPLUNK_HTTP_ENABLESSL_PRIVKEY=/media/key.pem
+      # - SPLUNK_HTTP_ENABLESSL_PRIVKEY_PASSWORD=${PRIVKEY_PASSWORD}
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_HEC_TOKEN=${SPLUNK_HEC_TOKEN}
+      - SPLUNK_PASSWORD
+    volumes:
+      - ./certs:/media
+    ports:
+      - 8000:8000
+      - 8088:8088
+  telegraf:
+    image: telegraf
+    container_name: telegraf
+    volumes:
+      - $PWD/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    ports:
+      - 8125:8125
