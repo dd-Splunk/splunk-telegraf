@@ -5,3 +5,12 @@ modtime = 1640105336.787272000
 [app/launcher]
 version = 8.2.3.2
 modtime = 1640105336.790118000
+
+[app/install/install_source_checksum]
+version = 8.2.3.2
+modtime = 1640105890.959145000
+
+[indexes/telegraf]
+owner = admin
+version = 8.2.3.2
+modtime = 1640105980.113844000
