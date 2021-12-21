@@ -1,5 +1,25 @@
 # splunk-telegraf
 
+## To publish a new version of the app
+
+After pushing all changes to Git, create a new version tag in the [SemVer format](https://semver.org): vx.y.z, and push it
+
+```bash
+git tag vx.y.z
+git push --tags
+````
+
+This will initiate a new packaging of the app while embedding the version in the `app.conf` file.
+
+## Testing with Docker
+
+A `docker-compose.yml`is included. 
+Execute the following to bring up your deployment:
+
+```bash
+$ SPLUNK_PASSWORD=<password> docker-compose up -d
+```
+
 ## Reference
 
 - From thing to MQTT
