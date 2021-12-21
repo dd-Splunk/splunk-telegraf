@@ -9,16 +9,17 @@ services:
       # - SPLUNK_HTTP_ENABLESSL_CERT=/media/cert.pem
       # - SPLUNK_HTTP_ENABLESSL_PRIVKEY=/media/key.pem
       # - SPLUNK_HTTP_ENABLESSL_PRIVKEY_PASSWORD=${PRIVKEY_PASSWORD}
+      - SPLUNK_APPS_URL=https://github.com/dd-Splunk/splunk-telegraf/releases/latest/download/splunk-telegraf.spl 
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_HEC_TOKEN=${SPLUNK_HEC_TOKEN}
       - SPLUNK_PASSWORD
-    volumes:
-      - ./certs:/media
+    # volumes:
+    #   - ./certs:/media
     ports:
       - 8000:8000
       - 8088:8088
       - 8089:8089
-      
+
   telegraf:
     image: telegraf
     container_name: telegraf
