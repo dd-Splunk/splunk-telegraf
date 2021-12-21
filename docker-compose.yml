@@ -27,9 +27,11 @@ services:
       - $PWD/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     ports:
       - 8125:8125
+    restart: always
   mosquitto:
     image: eclipse-mosquitto:latest
     container_name: mosquitto
     ports:
       - "1883:1883"
       - "9001:9001"
+    restart: always

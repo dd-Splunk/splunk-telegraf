@@ -26,6 +26,7 @@ $ SPLUNK_PASSWORD=<password> docker-compose up -d
   Arduino blog: https://docs.arduino.cc/tutorials/mkr-1000-wifi/mkr-1000-mqtt-device-to-device 
 - From MQTT to telegraf
   Influxdata blog: https://www.influxdata.com/blog/mqtt-topic-payload-parsing-telegraf/
+- MQTT and IoT https://lucassardois.medium.com/handling-iot-data-with-mqtt-telegraf-influxdb-and-grafana-5a431480217
 - From statsd to telegraf
   Influxdata blog: https://www.influxdata.com/blog/getting-started-with-sending-statsd-metrics-to-telegraf-influxdb/ 
 - From telegraf to splunk HEC:
